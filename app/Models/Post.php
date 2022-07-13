@@ -9,6 +9,16 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $with = ['category', 'author'];
+
     // protected $guarded = ['id']; // risky!
-    protected $fillable = ['title','excerpt','body'];  // preferred!
+    protected $fillable = [];  // preferred!
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function author() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
