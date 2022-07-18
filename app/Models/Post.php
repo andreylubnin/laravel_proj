@@ -14,6 +14,27 @@ class Post extends Model
     // protected $guarded = ['id']; // risky!
     protected $fillable = [];  // preferred!
 
+    public function scopeFilter($query, array $filters) {
+        $query->when($filters['search']?? false, fn($query) =>
+            $query->where(fn($query) =>
+                $query->where('title','like', '%' . $filters['search'] . '%')
+                    ->orWhere('body','like', '%' . $filters['search'] . '%')
+            )
+        );
+
+        $query->when($filters['category']??false, fn($query, $category) =>
+            $query->whereHas('category', fn($query) =>
+                $query->where('slug', $category)
+            )
+        );
+
+        $query->when($filters['author']??false, fn($query, $author) =>
+            $query->whereHas('author', fn($query) =>
+                $query->where('username', $author)
+            )
+        );
+    }
+
     public function category() {
         return $this->belongsTo(Category::class);
     }
