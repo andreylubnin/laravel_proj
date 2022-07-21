@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48a29992c4af1cc04c193a021e89a042",
+    "content-hash": "f06c5b446c9b37297ec4db8ecf39e842",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2201,6 +2201,93 @@
                 "source": "https://github.com/opis/closure/tree/3.6.3"
             },
             "time": "2022-01-27T09:35:39+00:00"
+        },
+        {
+            "name": "pckg-app/api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pckg-app/api.git",
+                "reference": "06e0adc748821714fb1bc3ec15b5566cd7dd4bf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pckg-app/api/zipball/06e0adc748821714fb1bc3ec15b5566cd7dd4bf1",
+                "reference": "06e0adc748821714fb1bc3ec15b5566cd7dd4bf1",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0 || ^7.0"
+            },
+            "require-dev": {
+                "pckg/database": "dev-master"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pckg": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bojan Rajh",
+                    "email": "schtr4jh@schtr4jh.net"
+                }
+            ],
+            "description": "Core api for pckg apps",
+            "homepage": "https://github.com/pckg-app/api",
+            "support": {
+                "issues": "https://github.com/pckg-app/api/issues",
+                "source": "https://github.com/pckg-app/api/tree/master"
+            },
+            "time": "2022-01-15T15:03:42+00:00"
+        },
+        {
+            "name": "pckg-app/mailo-api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pckg-app/mailo-api.git",
+                "reference": "41fb45d32a872763a8db3ea06ba6b1f7f4323368"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pckg-app/mailo-api/zipball/41fb45d32a872763a8db3ea06ba6b1f7f4323368",
+                "reference": "41fb45d32a872763a8db3ea06ba6b1f7f4323368",
+                "shasum": ""
+            },
+            "require": {
+                "pckg-app/api": "dev-master"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pckg": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bojan Rajh",
+                    "email": "schtr4jh@schtr4jh.net"
+                }
+            ],
+            "description": "PHP API for Mailo mailing service",
+            "homepage": "https://github.com/pckg-app/mailo-api",
+            "support": {
+                "issues": "https://github.com/pckg-app/mailo-api/issues",
+                "source": "https://github.com/pckg-app/mailo-api/tree/master"
+            },
+            "time": "2022-03-07T09:42:15+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8117,7 +8204,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "pckg-app/mailo-api": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

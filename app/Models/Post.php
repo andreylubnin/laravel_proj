@@ -9,10 +9,6 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $with = ['category', 'author'];
-
-    // protected $guarded = ['id']; // risky!
-    protected $fillable = [];  // preferred!
 
     public function scopeFilter($query, array $filters) {
         $query->when($filters['search']?? false, fn($query) =>
